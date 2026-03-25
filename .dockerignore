@@ -3,6 +3,9 @@
 
 .docker
 
+occupy_react_client/
+assets/
+
 app/__pycache__/
 app/*/__pycache__/
 app/*/*/__pycache__/

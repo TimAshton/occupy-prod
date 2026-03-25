@@ -1,24 +1,13 @@
-import Sector from "./Sector"
+import GameActions from "./GameActions"
+import GameMessage from "./GameMessage"
+import Board from "./Board"
 
 export default function GameBoard() {
-
-    const sectors = []
-    for(let i = 0; i < 25; i++) {
-        sectors.push(<Sector key={i} />)
-    }
-
     return (
         <div className="column">
-            <div>
-                <div className="grid-container">
-                    { sectors }
-                </div>
-            </div>
-            <div>game message</div>
-            <div>game actions</div>
-            <div>
-                <button>New Game</button>
-            </div>
+            <Board />
+            <GameMessage />
+            <GameActions />
         </div>
     )
 }
