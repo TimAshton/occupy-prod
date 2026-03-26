@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function PlayerColumn({ name, nameClass }) {
+export default function PlayerColumn({ name, nameClass, turnIndicator, sectors }) {
     const [settlerCount, setSettlerCount] = useState(1000)
     const [sectorCount, setSectorCount] = useState(0)
 
