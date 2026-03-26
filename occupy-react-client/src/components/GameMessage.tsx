@@ -1,5 +1,5 @@
-export default function GameMessage() {
+export default function GameMessage({message}) {
     return  (
-        <div id="game-message-box">Welcome. Click "New Game" to begin.</div>
+        <div id="game-message-box">{message}</div>
     )
 }

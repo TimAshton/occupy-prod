@@ -45,6 +45,7 @@ function App() {
   const [ status, setStatus ] = useState(false)
   const [ playerOne, setPlayerOne ] = useState({ name: "Blue", settlers: 1000 })
   const [ playerTwo, setPlayerTwo ] = useState({ name: "Red", settlers: 1000 })
+  const [ message, setMessage ] = useState("Welcome. Click 'New Game' to begin.")
 
   // Replaces componentDidMount:
   useEffect(() => {
@@ -64,10 +65,12 @@ function App() {
   }
 
   function newGameClickHandler() {
+    setMessage("")
     setStatus(true)
   }
 
   function endGameClickHandler() {
+    setMessage("Click 'New Game' to begin.")
     setStatus(false)
   }
 
@@ -77,18 +80,21 @@ function App() {
           name="Blue" 
           turnIndicator={turnIndicator} 
           nameClass={`blue ${turnIndicator === 1 ? 'turn-indicator' : ''}`}
-          sectors={sectors_arr} />
+          sectors={sectors_arr}
+          player={playerOne} />
         <GameColumn 
           sectorClickHandler={sectorClickHandler}
           sectors={sectors_arr}
           status={status}
           newGameClickHandler={newGameClickHandler}
-          endGameClickHandler={endGameClickHandler} />
+          endGameClickHandler={endGameClickHandler}
+          message={message} />
         <PlayerColumn 
           name="Red" 
           turnIndicator={turnIndicator} 
           nameClass={`red ${turnIndicator === 2 ? 'turn-indicator' : ''}`} 
-          sectors={sectors_arr} />
+          sectors={sectors_arr}
+          player={playerTwo} />
     </div>
   )
 }
